@@ -1,0 +1,22 @@
+module main {
+    var a, b : integer;
+    
+    init {
+        a = 0; b = 1;
+    }
+
+    next {
+        a’, b’ = b, a + b;
+    }
+
+    // This time the invariant will be checked by BMC 
+    // 	instead of an inductiveness check.
+    invariant a_le_b: a <= b;
+
+    control {
+    	// The bmc command
+        bmc (3);
+        check;
+        print_results;
+    }
+}

@@ -1,0 +1,13 @@
+// Filename: a.ucl
+module A {
+    input a: integer;
+    var x: integer;
+
+    init {
+        x = 0;
+    }
+
+    next {
+        x' = x + a;
+    }
+}

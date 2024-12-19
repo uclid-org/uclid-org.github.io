@@ -1,0 +1,62 @@
+@inproceedings{seshia-memocode18,
+  author    = {Sanjit A. Seshia and Pramod Subramanyan},
+  title     = {UCLID5: Integrating Modeling, Verification, Synthesis and Learning},
+  booktitle = {16th ACM/IEEE International Conference on Formal Methods and Models
+               for System Design (MEMOCODE)},
+  year      = {2018},
+  abstract  = {
+    Formal methods for system design are facing a confluence of transformative
+    trends. First, systems are increasingly heterogeneous, comprising some
+    combination of hardware, software, networking, and physical processes.
+    Second, these systems are increasingly being designed with data-driven
+    methods, in addition to traditional model-based design techniques. Third,
+    traditional automated reasoning techniques based on deduction are being
+    combined with new techniques for inductive inference and machine learning.
+    In this paper, we present UCLID5, a new system for formal modeling,
+    verification, and synthesis that addresses the challenges and opportunities
+    arising from this confluence. UCLID5 can model heterogeneous computational
+    systems, provides term-level abstraction supported by satisfiability modulo
+    theories (SMT) solvers, enables compositional reasoning, and implements the
+    paradigm of verification by reduction to synthesis, leveraging the advances
+    in algorithmic synthesis and machine learning. We describe the key features
+    of UCLID5 using illustrative examples.
+  }
+}
+
+@inproceedings{bryant-cav02,
+  author    = {Randal E. Bryant and Shuvendu K. Lahiri and Sanjit A. Seshia},
+  title     = {Modeling and Verifying Systems using a Logic of Counter Arithmetic with Lambda Expressions and Uninterpreted Functions},
+  booktitle = {Computer-Aided Verification (CAV '02)},
+  year      = {2002},
+  abstract  = {
+    In this paper, we present the logic of Counter Arithmetic with Lambda
+    Expressions and Uninterpreted Functions (CLU). CLU generalizes the logic of
+    equality with uninterpreted functions (EUF) with constrained lambda
+    expressions, ordering, and successor and predecessor functions. In addition
+    to modeling pipelined processors that EUF has proved useful for, CLU can be
+    used to model many infinite-state systems including those with infinite
+    memories, finite and infinite queues including lossy channels, and networks
+    of identical processes. Even with this richer expressive power, the validity
+    of a CLU formula can be efficiently decided by translating it to a
+    propositional formula, and then using Boolean methods to check validity. We
+    give theoretical and empirical evidence for the efficiency of our decision
+    procedure. We also describe verification techniques that we have used on a
+    variety of systems, including an out-of-order execution unit and the
+    load-store unit of an industrial microprocessor.
+  }
+}
+
+@inproceedings{lahiri-cav04,
+  author    = {Shuvendu K. Lahiri and Sanjit A. Seshia},
+  title     = {The UCLID Decision Procedure},
+  booktitle = {Computer-Aided Verification (CAV '04)},
+  year      = {2004},
+  abstract  = {
+    UCLID is a tool for term-level modeling and verification of infinite-state
+    systems expressible in the logic of counter arithmetic with lambda
+    expressions and uninterpreted functions (CLU). In this paper, we describe a
+    key component of the tool, the decision procedure for CLU. Apart from
+    validity checking, the decision procedure also provides other useful features
+    such as concrete counterexample generation and proof-core generation.
+  }
+}

@@ -1,0 +1,14 @@
+[book]
+authors = ["uclid-org"]
+language = "en"
+multilingual = false
+src = "src"
+title = "uclid-docs"
+description = "Documentation for UCLID5"
+
+[preprocessor.bib]
+bibliography = "uclid5.bib"
+
+[output.html]
+mathjax-support = true
+theme = "theme"

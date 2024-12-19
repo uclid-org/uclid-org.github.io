@@ -1,0 +1,19 @@
+module main {
+    procedure isGreaterThanOrEqual(p: integer, q:integer) returns (res: boolean)
+    ensures ((res == true) ==> ( p >= q));
+    ensures ((res == false) ==> ( p < q));
+    ensures ((p.1 == p.2 && q.1 == q.2)  ==> (res.1 == res.2)); //determinism
+    {
+        res = true;
+        if( p < q)
+        {
+            res = false;
+        }
+    }
+
+    control {
+        v = verify(isGreaterThanOrEqual);
+        check;
+        print_results;
+    }
+}
