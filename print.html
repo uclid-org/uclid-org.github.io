@@ -1,0 +1,1415 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>uclid-docs</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for UCLID5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="introduction/installation.html"><strong aria-hidden="true">1.2.</strong> Installation Guide</a></li><li class="chapter-item expanded "><a href="introduction/firstlook.html"><strong aria-hidden="true">1.3.</strong> A first look at UCLID5</a></li></ol></li><li class="chapter-item expanded "><a href="language/language.html"><strong aria-hidden="true">2.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="language/datatypes.html"><strong aria-hidden="true">2.1.</strong> Datatypes</a></li><li class="chapter-item expanded "><a href="language/variables.html"><strong aria-hidden="true">2.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="language/statements.html"><strong aria-hidden="true">2.3.</strong> Statements</a></li><li class="chapter-item expanded "><a href="language/blocks.html"><strong aria-hidden="true">2.4.</strong> init, next, control</a></li><li class="chapter-item expanded "><a href="language/procedures.html"><strong aria-hidden="true">2.5.</strong> Procedures</a></li><li class="chapter-item expanded "><a href="language/modules.html"><strong aria-hidden="true">2.6.</strong> Modules</a></li><li class="chapter-item expanded "><a href="language/reference.html"><strong aria-hidden="true">2.7.</strong> Language Reference</a></li></ol></li><li class="chapter-item expanded "><a href="verification/verification.html"><strong aria-hidden="true">3.</strong> Verification</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="verification/specification.html"><strong aria-hidden="true">3.1.</strong> Specification</a></li><li class="chapter-item expanded "><a href="verification/bmc.html"><strong aria-hidden="true">3.2.</strong> Bounded Model Checking</a></li><li class="chapter-item expanded "><a href="verification/induction.html"><strong aria-hidden="true">3.3.</strong> Inductive Proofs</a></li><li class="chapter-item expanded "><a href="verification/refinement.html"><strong aria-hidden="true">3.4.</strong> Verifying Refinement</a></li><li class="chapter-item expanded "><a href="verification/hyperproperties.html"><strong aria-hidden="true">3.5.</strong> Verifying Hyperproperties</a></li><li class="chapter-item expanded "><a href="verification/floydhoare.html"><strong aria-hidden="true">3.6.</strong> Floyd-Hoare</a></li><li class="chapter-item expanded "><a href="verification/smto.html"><strong aria-hidden="true">3.7.</strong> SMTO</a></li></ol></li><li class="chapter-item expanded "><a href="synthesis/synthesis.html"><strong aria-hidden="true">4.</strong> Synthesis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="synthesis/basics.html"><strong aria-hidden="true">4.1.</strong> Synthesis Basics</a></li><li class="chapter-item expanded "><a href="synthesis/sygus.html"><strong aria-hidden="true">4.2.</strong> Syntax Guided Synthesis</a></li><li class="chapter-item expanded "><a href="synthesis/smo.html"><strong aria-hidden="true">4.3.</strong> SyMO</a></li></ol></li><li class="chapter-item expanded "><a href="advanced/advanced.html"><strong aria-hidden="true">5.</strong> Advanced Features</a></li><li class="chapter-item expanded affix "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="idiomatic.html"><strong aria-hidden="true">6.</strong> Idiomatic UCLID5</a></li><li class="chapter-item expanded "><a href="tooling.html"><strong aria-hidden="true">7.</strong> Tooling</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">uclid-docs</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>UCLID5 is a software toolkit for the formal modeling, specification, verification, and synthesis of computational systems. The UCLID5 toolchain aims to:</p>
+<ol>
+<li>Enable compositional (modular) modeling of finite and infinite state transition systems across a range of concurrency models and background logical theories;</li>
+<li>Verification of a range of properties, including assertions, invariants, and temporal properties, and</li>
+<li>Integrate modeling and verification with algorithmic and inductive synthesis.</li>
+</ol>
+<p>UCLID5 draws inspiration from the earlier UCLID system for modeling and verification of systems {{#cite bryant-cav02}} {{#cite lahiri-cav04}}, in particular the idea of modeling concurrent systems in first-order logic with a range of background theories, and the use of proof scripts within the model. However, the UCLID5 modeling language and verification capabilities go beyond the original modeling language, and the planned integration with synthesis is novel.</p>
+<p>This document serves as introduction to the UCLID5 modeling language and toolchain. With the UCLID5 system under active development, we expect this document to undergo several changes as the system and its applications evolve.</p>
+<h1 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h1>
+<p>UCLID5 has two prerequisites.</p>
+<ol>
+<li>UCLID5 requires that the JavaTM Runtime Environment be installed on your machine. You can download the latest Java Runtime Environment for your platform from <a href="https://www.java.com">https://www.java.com</a>.</li>
+<li>UCLID5 uses the Z3 SMT solver. You can install Z3 from: <a href="https://github.com/Z3Prover/z3/releases">https://github.com/Z3Prover/z3/releases</a>. Make sure the <code>z3</code> or <code>z3.exe</code> binary is in your path after Z3 installed. Also make sure, the shared libraries for <code>libz3</code> and <code>libz3java</code> are in the dynamic library load path (<code>LD_LIBRARY_PATH</code> on Unix-like systems).
+UCLID5 has been tested with JavaTM SE Runtime Environment version 1.8.0 and Z3 versions 4.5.1 and 4.6.0.</li>
+</ol>
+<p>TODO: add optional prerequisites (CVC4, other verif. backends?).</p>
+<h1 id="installation-guide"><a class="header" href="#installation-guide">Installation Guide</a></h1>
+<p>Public releases of the UCLID5 can be obtained at: <a href="https://github.com/uclid-org/uclid/releases">https://github.com/uclid-org/uclid/releases</a>. </p>
+<h3 id="quick"><a class="header" href="#quick">Quick</a></h3>
+<p>For the impatient, the short version of the installation instructions
+is: download the archive with the latest release, unzip the archive and add the <code>bin/</code> subdirectory to your <code>PATH</code>. More detailed instructions for installation are as follows.</p>
+<h3 id="detailed-installation"><a class="header" href="#detailed-installation">Detailed Installation</a></h3>
+<p>First, down the platform independent package from <a href="https://github.com/uclid-org/uclid/releases">https://github.com/uclid-org/uclid/releases</a>.
+Next, follow these instructions which are provided for the bash shell running on a Unix-like platform. Operations for Micosoft Windows, or a different shell should be similar.</p>
+<ul>
+<li>
+<p>Unzip the archive.</p>
+<p><code>&gt; unzip uclid-0.9.5.zip</code></p>
+</li>
+<li>
+<p>Add the uclid binary to your path.</p>
+<p><code>&gt; export PATH=$PATH:$PWD/uclid-0.9.5/bin/</code></p>
+</li>
+<li>
+<p>Check that the uclid works.</p>
+<p><code>&gt; uclid --help</code></p>
+</li>
+</ul>
+<p>This should produce output similar to the following.</p>
+<pre><code>uclid 0.9.5
+Usage: uclid [options] &lt;file&gt; ...
+
+  -m, --main &lt;Module&gt;      Name of the main module.
+  -s, --solver &lt;Cmd&gt;       External SMT solver binary.
+  -y, --synthesizer &lt;Cmd&gt;  Command line to invoke SyGuS synthesizer.
+  -g, --smt-file-generation &lt;value&gt;
+                           File prefix to generate smt files for each assertion.
+  -X, --exception-stack-trace
+                           Print exception stack trace.
+  -f, --sygus-format       Generate the standard SyGuS format.
+  -e, --enum-to-numeric    Enable conversion from EnumType to NumericType.
+  -u, --uf-to-array        Enable conversion from Uninterpreted Functions to Arrays.
+  -t, --test-fixedpoint    Test fixed point
+  --help                   prints this usage text
+  &lt;file&gt; ...               List of files to analyze.
+</code></pre>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>Invoke UCLID5 on a model is easy. Just run the uclid binary and provide a list of files containing the model as a command-line argument. When invoked, UCLID5 will parse each of these files and look for a module named main among them. It will execute the commands in the main module’s control block. The <code>--main</code> command line argument can be used to specify a different name for the <code>main</code> module. Note only the <code>main</code> module's control blocks will be executed, even if the main module instantiates other modules with control blocks. If no main module is found, UCLID5 will exit with an
+error, as we saw in the previous section when uclid was invoked without arguments. </p>
+<p>Example 1.1 is part of the UCLID5 distribution in the <code>examples/tutorial/</code> subdirectory. You can run UCLID5 on this model as:</p>
+<p><code>  &gt;  uclid examples/tutorial/ex1.1-fib-model.ucl</code></p>
+<p>This should produce the following output.</p>
+<pre><code>Successfully parsed 1 and instantiated 1 module(s).
+4 assertions passed.
+0 assertions failed.
+0 assertions indeterminate.
+Finished execution for module: main.
+</code></pre>
+<h1 id="a-first-look-at-uclid5"><a class="header" href="#a-first-look-at-uclid5">A first look at UCLID5</a></h1>
+<p>A simple UCLID5 module that computes the Fibonacci sequence is shown in the <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex1.1-fib-model.ucl">example</a> shown below for reference.</p>
+<pre><code class="language-uclid">module main {
+    // Part 1: System description.
+    var a, b : integer;
+    
+    init {
+        a = 0;
+        b = 1;
+    }
+
+    next {
+        a’, b’ = b, a + b;
+    }
+
+    // Part 2: System specification.
+    invariant a_le_b: a &lt;= b;
+
+    // Part 3: Proof script.
+    control {
+        unroll (3);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>We will now walk through each line in this model to understand the basics of UCLID5. The top-level syntactic structure in UCLID5 is a module. All modeling, verification and synthesis code in UCLID5 is contained within modules. In the example, we have defined one module named <code>main</code>.</p>
+<p>The module can be conceptually split into three parts: a system description, a specification and proof script. In the example, these three conceptual parts are also kept separate in the code. The following subsections describe each of these sections.</p>
+<h3 id="the-system-model"><a class="header" href="#the-system-model">The System Model</a></h3>
+<p>This part of a UCLID5 module describes the functionality of the transition system that is being modeled: it tells us what the system does.
+The first item of interest within the module main are state variables.
+These are declared using the var keyword.</p>
+<p>The module main declares two state variables: <code>a</code> and <code>b</code>. These are both of type <code>integer</code>, which corresponds to mathematical integers.
+The <code>init</code> block appears next, defining the initial values of the state variables in the module. After the init block is executed, <code>a</code> and <code>b</code> have the values 0 and 1 respectively.
+The <code>next</code> block appears after this and it defines the transition relation of the module. Primed variables (notation <code>a'</code>) refer to the value of the state variables at the end of the current &quot;step&quot;. The <code>next</code> block assigns <code>a</code> to the (old) value of <code>b</code>, while <code>b</code> is assigned to the (old) value of <code>a + b</code>.</p>
+<h3 id="the-system-specification"><a class="header" href="#the-system-specification">The System Specification</a></h3>
+<p>The specification answers the question: what is the system supposed to do?. In our example, we have a single <em>invariant</em> that comprises that entire specification. It is named <code>a_le_b</code> and as the name suggests, it states that <code>a</code> must be less than or equal to <code>b</code> for every reachable state of the system. Note that the keywords <em>invariant</em> and <em>property</em> are synonyms in UCLID5.</p>
+<h3 id="the-proof-script"><a class="header" href="#the-proof-script">The Proof Script</a></h3>
+<p>The third and final part of the UCLID5 module is a set of commands to the UCLID5 verification engine. These tell how UCLID5 should go about proving that the system satisfies its specification.</p>
+<p>The proof script is contained within the <code>control</code> block. The commands here execute the system for 3 steps and check whether all of the systems properties (in this case, we only have one invariant: <code>a_le_b</code>) are satisfied for each of these steps. The command <code>unroll</code> executes the system for 3 steps. This execution generates four proof obligations. These proof obligations ask whether the system satisfies the invariant <code>a_le_b</code> in the initial state and in each of the 3 states reached next. The <code>check</code> command checks whether these proof obligations are satisfied and the print results prints out the results of these checks.</p>
+<h1 id="uclid5-language"><a class="header" href="#uclid5-language">UCLID5 Language</a></h1>
+<ul>
+<li><a href="language/datatypes.html">Datatypes</a></li>
+<li><a href="language/variables.html">Variables</a></li>
+<li><a href="language/variables.html">Statements</a></li>
+<li><a href="language/blocks.html">init, next, control</a></li>
+<li><a href="language/procedures.html">Procedures</a></li>
+<li><a href="language/modules.html">Modules</a></li>
+<li><a href="language/reference.html">Full Language Reference</a></li>
+</ul>
+<h1 id="datatypes"><a class="header" href="#datatypes">Datatypes</a></h1>
+<h3 id="datatypes-1"><a class="header" href="#datatypes-1">Datatypes</a></h3>
+<p>UCLID5 supports the following base datatypes:</p>
+<ol>
+<li>
+<p><code>integer</code>: mathematical integers</p>
+</li>
+<li>
+<p><code>boolean</code>: the Boolean type with two values: true and false.</p>
+</li>
+<li>
+<p>Bit-vector types <code>bvW</code>: the family of bit-vector types parameterized by their width (W).</p>
+<p>e.g. <code>bv32</code></p>
+</li>
+<li>
+<p>Enumeration types using the keyword <code>enum</code>:</p>
+<p>e.g. <code>enum { a, b, c}</code></p>
+</li>
+</ol>
+<p>These types are mapped down to their SMT equivalents. </p>
+<p>UCLID5 also allows definition of higher-order types: arrays, records and uninterpreted functions.</p>
+<ol start="5">
+<li>
+<p>Arrays are defined by <code>field_type[index_type]</code> where <code>field_type</code> is the type of data members stored in the array and <code>index_type</code> is the type of the array index.</p>
+<p>e.g. <code>bv32[bv4]</code></p>
+</li>
+<li>
+<p>Records are defined using the <code>record</code> keyword followed by a list of named members.</p>
+<p>e.g. <code>record { valid : boolean, payload : bv32 }</code></p>
+</li>
+</ol>
+<h3 id="named-typedefs"><a class="header" href="#named-typedefs">Named typedefs</a></h3>
+<p>Named typedefs of the following form are allowed:</p>
+<pre><code class="language-uclid">type &lt;typename&gt; = &lt;typedefinition&gt;;
+</code></pre>
+<p>For example, <code>message_t</code> is record-type with a 32-bit payload and a boolean valid flag. And <code>regfile_t</code> is an array type with 4-bit index and 32-bit register elements.</p>
+<pre><code class="language-uclid">type message_t = record { valid : boolean, payload : bv32 };
+
+type regfile_t = bv32[bv4];
+</code></pre>
+<p>These typedefs can be used when instantiating variables as described below.</p>
+<h3 id="example-1"><a class="header" href="#example-1">Example</a></h3>
+<p>The following example from illustrates several type definitions defined in the <code>common</code> module. This module can be imported into multiple other modules. </p>
+<pre><code class="language-uclid">module common {
+  // addresses 8-bit vectors
+  type addr_t = bv8;
+  type word_t = bv8;
+  // 
+  type mem_t = [addr_t]word_t;
+  // CPU operation.
+  type op_t   = enum { op_mov, op_add, op_sub, op_load, op_store };
+}
+</code></pre>
+<h1 id="variable-declarations"><a class="header" href="#variable-declarations">Variable Declarations</a></h1>
+<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
+<p>Variables in UCLID5 are instantiated using a <code>var</code> declaration as</p>
+<pre><code class="language-uclid">	var &lt;variable_name&gt; : &lt;type&gt;;
+</code></pre>
+<h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
+<p>Symbolic constants are declared using the <code>const</code> keyword as</p>
+<pre><code class="language-uclid">	const &lt;const_name&gt; : &lt;type&gt;;
+</code></pre>
+<p>Note though that the value for the constant is not defined here.</p>
+<h3 id="uninterpreted-functions"><a class="header" href="#uninterpreted-functions">Uninterpreted functions</a></h3>
+<p>Uninterpreted functions are identified by the keyword <code>function</code>: they have a list of input types and an output type.
+Uninterpreted functions can be declared <code>function</code> declaration. These functions are typed, mapping a tuple of typed arguments to a return type. </p>
+<pre><code class="language-uclid">	function &lt;function_name&gt;(&lt;input_type_list&gt;) : &lt;output_type&gt;;
+</code></pre>
+<p>For example, the following uninterpreted function models the mapping of an instrution to an opcode.</p>
+<pre><code class="language-uclid">	function inst2op(i : word_t) : op_t;
+</code></pre>
+<h3 id="input-and-output-variables"><a class="header" href="#input-and-output-variables">Input and output variables</a></h3>
+<p>Variables can be marked with the keywords <code>input</code> and <code>output</code>, expressing the fact that these variables can be connected to/from by other external modules. Note that the <code>var</code> keyword is not used. For example:</p>
+<pre><code class="language-uclid">input my_input_1 : int
+output my_output_2 : bv8
+</code></pre>
+<p>We describe this in greater detail in the <a href="language/modules.html">Modules</a> page.</p>
+<h3 id="accessing-values"><a class="header" href="#accessing-values">Accessing values</a></h3>
+<p>The syntax for accessing values from these variables with higher-order types is similar to languages like C/Java. Arrays are <code>0</code> indexed and use the <code>[]</code> operator. Fields from records are accessed with <code>.</code>.</p>
+<pre><code class="language-uclid">	var myarr : [int]bool;
+	sixthval = myarr[5];
+
+	var myrec : record { valid : bool, payload : bv32 };
+	pyld = myrec.payload;
+</code></pre>
+<p>Index <code>i</code> of array <code>arr</code> is accessed using the syntax <code>arr[i]</code>. Field <code>value</code> in the record <code>result</code> is accessed as <code>result.value</code>.</p>
+<h3 id="example-2"><a class="header" href="#example-2">Example</a></h3>
+<p>As an example we show an excerpt of an ALU model illustrating <code>input</code> and <code>output</code> declarations as well as internal variable (normal <code>var</code>) declarations. The excerpt is taken from <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex2.1-alu.ucl">here</a>.</p>
+<pre><code class="language-uclid">module main {
+
+  // typedef cmd_t which is an enum
+  type cmd_t = enum { add, sub, mov_imm };
+  // typedef result_t which is a record
+  type result_t = record { valid : boolean, value : bv8 };
+
+  input  valid  : boolean;
+  input  cmd    : cmd_t;
+  // the ALU takes two 3-bit input values from another module
+  input  r1, r2 : bv3;
+  input  immed  : bv8;
+  output result : result_t;
+  var    regs   : [bv3]bv8;
+  var    cnt    : bv8; 
+  
+  // ... remaining module content
+}
+</code></pre>
+<h1 id="statements-and-imperative-constructs"><a class="header" href="#statements-and-imperative-constructs">Statements and Imperative Constructs</a></h1>
+<p>UCLID5 allows for the following constructs:</p>
+<ul>
+<li><a href="language/statements.html#assignments">Assignments</a></li>
+<li><a href="language/statements.html#defines">Defines</a></li>
+<li><a href="language/statements.html#for-loops">For loops</a></li>
+<li><a href="language/statements.html#if-then-else">If then else</a></li>
+<li><a href="language/statements.html#case-statements">Case statements</a></li>
+</ul>
+<h3 id="assignments"><a class="header" href="#assignments">Assignments</a></h3>
+<p>Computation in UCLID5 can be either procedural (sequential) or parallel (concurrent). Procedural computation is performed either in the init block or by defining a procedure. Parallel computation occurs in the next block.</p>
+<h4 id="comparing-parallel-vs-sequential-assignments"><a class="header" href="#comparing-parallel-vs-sequential-assignments">Comparing Parallel vs. Sequential Assignments</a></h4>
+<p>Sequential assignments are of the form:</p>
+<pre><code class="language-uclid">// a sequential assignment
+variable = expression;
+</code></pre>
+<p>The following sequential assignment</p>
+<pre><code class="language-uclid">  x = x + 1;
+  y = x;
+</code></pre>
+<p>behaves exactly as a typical imperative assignment in usual programming languages. If the values at the beginning of the code snippet were <code>x = 0</code> and <code>y = 1</code>, post execution, the values will be <code>x = 1</code> and <code>y = 1</code>.</p>
+<p>Parallel assignments must be of the form (the prime denotes parallel assignment):</p>
+<pre><code class="language-uclid">variable' = expression;
+</code></pre>
+<p>The parallel assignment:</p>
+<pre><code class="language-uclid">  x' = x + 1;
+  y' = x;
+</code></pre>
+<p>behaves as if both the statements executed simultaneously. If the values of the variables were <code>x = 0</code> and <code>y = 1</code>, then after executing the values will be <code>x = 1</code>, <code>y = 0</code>.</p>
+<blockquote>
+<p>Assignments made in procedures and in the <code>init</code> block are sequential assignment while assignments made in the <code>next</code> block are parallel assignments.</p>
+</blockquote>
+<p>We will discuss the init, next blocks as well as procedures in the coming sections.</p>
+<h4 id="duplicate-update-check"><a class="header" href="#duplicate-update-check">Duplicate update check</a></h4>
+<p>Since parallel assignments update values simultaneously, UCLID5 checks whether the same variable is being written to twice. </p>
+<p>The following sequential snippet is allowed and ends with <code>x</code> having the value 6. </p>
+<pre><code class="language-uclid">x = 1;
+x = x + 2;
+x = x + 3;
+</code></pre>
+<p>In contrast, the following sequence of parallel assignments is not allowed and will result in a compiler error.</p>
+<pre><code class="language-uclid">// Error, will not compile.
+x' = 1;
+x' = x + 2;
+x' = x + 3;
+</code></pre>
+<p>Only a single parallel assignment to a state/output variable is allowed in a code block. Furthermore, since parallel assignments are computed in data-flow order, the order in which they are specified does not matter. This means that the following two snippets of code are equivalent:</p>
+<pre><code class="language-uclid">next {
+    x' = x + 1;
+    y' = x' + 1;
+}
+</code></pre>
+<pre><code class="language-uclid">next {
+    y' = x' + 1;
+    x' = x + 1;
+}
+</code></pre>
+<p>UCLID5 determines that since <code>y'</code> depends on the value of <code>x'</code>, <code>x'</code> has to be computed first. This value is then used in the computation of <code>y'</code>. This is regardless of the order in which these assignments appear in the next block. Note also that the assignment to <code>x'</code> uses the value of the variable <code>x</code> at the beginning of the current step of the transition system (i.e., the &quot;old&quot; value of <code>x</code>). In contrast the assignment to <code>y'</code> uses the &quot;new&quot; value of <code>x</code>, which is the value of <code>x</code> at the end of this step of the transition system. It is important to think carefully about which version of a variable (<code>var</code> or <code>var'</code>) must be used in a particular assignment.</p>
+<h3 id="defines"><a class="header" href="#defines">Defines</a></h3>
+<p>UCLID5 also supports the definition of C-like macro expressions which identified by the <code>define</code> keyword as follows.</p>
+<pre><code class="language-uclid">define &lt;name&gt; (arg list) : &lt;return types&gt; = &lt;expression&gt;
+</code></pre>
+<p>e.g. <code>define double(arg : bv8) : bv8 = (arg + arg);</code></p>
+<p>Such definitions are useful, as in C, to define expressions over arguments that are instantiated in multiple places, or which help make the code more readable.</p>
+<h3 id="for-loops"><a class="header" href="#for-loops">For Loops</a></h3>
+<p>UCLID5 begin a verification language does not allow dynamic range (or unbounded) for loops. The range must be specified by numeric literals as follows:</p>
+<pre><code class="language-uclid">for (i : bv3) in (0bv3, 7bv3) { regs[i] = 1bv8; }
+</code></pre>
+<p>The loop iterates over the values between 0 and 7 (both-inclusive).</p>
+<p>In many cases the values <code>0bv3</code> and <code>7bv3</code> are parameters of the model or are simply replicated across several locations in the code. Hence, UCLID5 also allows defining these values as macro-definitions. This requires the <code>for</code> statement to be declared with a typed iterator. For example, if the following macro definitions are at the module level,</p>
+<pre><code class="language-uclid">define begin() : bv3 = 0bv3;
+define end() : bv3 = 7bv3;
+</code></pre>
+<p>we may alternatively write the for loop in set init state in the following way:</p>
+<pre><code class="language-uclid">for (i : bv3) in (begin(), end()) { regs[i] = 1bv8; }
+</code></pre>
+<h3 id="if-then-else"><a class="header" href="#if-then-else">If then else</a></h3>
+<p>If-then-else statements follow usual imperative syntax.</p>
+<pre><code class="language-uclid">  if (condition_expression) {
+    // then statements
+  } else { 
+    // else statements
+  }
+</code></pre>
+<h3 id="case-statements"><a class="header" href="#case-statements">Case statements</a></h3>
+<p>UCLID5 supports case statements in the style of case-switch statements in C++. The following snippet illustrates their use.</p>
+<pre><code class="language-uclid">    case
+      (cmd == add)     : { regs[r1] = r1val + r2val; }
+      (cmd == sub)     : { regs[r1] = r1val - r2val; }
+      (cmd == mov_imm) : { regs[r1] = immed; }
+    esac
+</code></pre>
+<p><code>case</code> statements are delimited by <code>case</code> and <code>esac</code> and contain within them a list of boolean expressions and associated statement blocks. These expressions are evaluated in the order in which appear, and if any of them evaluate to true, the corresponding block is executed. If none of the case-expressions evaluate to true, nothing is executed. The keyword <code>default</code> can be used as a <code>catch-all</code> case like in C/C++.</p>
+<h1 id="init-next-control"><a class="header" href="#init-next-control">init, next, control</a></h1>
+<h3 id="init-block"><a class="header" href="#init-block"><code>init</code> block</a></h3>
+<p>The <code>init</code> block initializes the variables used in the UCLID5 module. It consists of sequential assignments.</p>
+<pre><code class="language-uclid">init {
+	x = 1; y = 1;
+}
+</code></pre>
+<h3 id="next-block"><a class="header" href="#next-block"><code>next</code> block</a></h3>
+<p>The <code>next</code> block models the transition relation of the module. </p>
+<pre><code class="language-uclid">next {
+	// simple parallel assignments
+	x' = 1; y' = 0;
+
+	// use of procedures to handle complex assignments
+	call (z') = complex_procedure (x, y);
+
+	// transition submodules
+	next (a_submodule);
+}
+</code></pre>
+<p>All assignments in the <code>next</code> block must be parallel assignments.
+However, there are cases when complex sequential logic is required to determine the next value of a variable, which is very tedious to implement solely using parallel updates. This can then implemented by performing procedure calls from the <code>next</code> block with the procedure housing the sequential logic.</p>
+<p>As is described in the <a href="language/Modules">modules.md</a> section, UCLID5 modules can house other submodules, which have their own transition systems (and <code>next</code> blocks). In such cases simultaneous transition of the submodule instance <code>a_submodule</code> can be achieved by using the <code>next</code> function on <code>a_submodule</code>. </p>
+<h3 id="control-block"><a class="header" href="#control-block"><code>control</code> block</a></h3>
+<p>The control block is essentially a verification script containing verification actions that are to be performed on the module. </p>
+<pre><code class="language-uclid">control {
+    unroll (3);
+    check;
+    print_results;
+}
+</code></pre>
+<p>The control block should only be a part of the top-level module also termed as the <code>main</code> module. Typical verification actions, which have been described in the introductory examples are <code>unroll (k)</code> (unroll the transition system for <code>k</code> steps), <code>check</code> (perform verification of properties on the unrolled transition system), etc. The resutlts from the verification can be printed using the <code>print_results</code> command. We will disucss more verification strategies in the section on verification.</p>
+<h1 id="procedures"><a class="header" href="#procedures">Procedures</a></h1>
+<p>Procedures take in a list of arguments and return a set of <em>named</em> values. The following snippet extracted from the ALU <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex2.1-alu.ucl">example</a> illustrates use of procedures.</p>
+<pre><code class="language-uclid">module main {
+	// global variables such as valid
+	// ... other stuff
+
+	procedure exec_cmd() returns (r : result_t)
+		modifies regs;
+	{
+		var r1val, r2val : bv8;
+		if (valid) {
+		  r1val, r2val = regs[r1], regs[r2];
+		  case
+		    (cmd == add)     : { regs[r1] = r1val + r2val; }
+		    (cmd == sub)     : { regs[r1] = r1val - r2val; }
+		    (cmd == mov_imm) : { regs[r1] = immed; }
+		  esac
+		  r.valid, r.value = true, regs[r1];
+		} else { r.valid = false; }
+	}
+
+	// ... other stuff 
+}
+</code></pre>
+<h4 id="modifies-requires-and-ensures"><a class="header" href="#modifies-requires-and-ensures">Modifies, Requires and Ensures</a></h4>
+<p>Procedures have three qualifiers: <code>modifies</code>, <code>requires</code> and <code>ensures</code>. The <code>modifies</code> lists a mandatory set of (global) variables which the procedure modifies, <code>requires</code> is a (optional) set of pre-conditions that the procedure needs to satisfy at the call site and <code>ensures</code> is an (optional) set of properties that the procedure guarantees will hold.</p>
+<p>The procedure above modifies the global variable <code>regs</code>, and hence <code>regs</code> must be declared in the <code>modifies</code> list of the procedure. UCLID5 complains if the <code>modifies</code> list is not declared correctly.</p>
+<p><code>requires</code> and <code>ensures</code> statements allow for verification of procedures and are optional.</p>
+<p>Extending the example above, the following additional <code>requires</code> and <code>ensures</code> statements would require that <code>valid</code> is always true at entry to the function <code>exec_cmd()</code> and gaurantees that the result at index <code>r1</code> of <code>regs</code> changes according to the command <code>cmd</code>.</p>
+<pre><code class="language-uclid">    procedure exec_cmd() returns (r : result_t)
+        modifies regs;
+        requires valid;
+        ensures cmd == add =&gt; regs = old(regs)[r1 -&gt; old(regs)[r1] + old(regs)[r1]];
+        ensures cmd == sub ==&gt; regs == old(regs)[r1 -&gt; old(regs)[r1] - old(regs)[r2]];
+        ensures cmd == mov_imm ==&gt; regs == old(regs)[r1 -&gt; immed];
+    {
+        var r1val, r2val : bv8;
+        if (valid) {
+          r1val, r2val = regs[r1], regs[r2];
+          case
+            (cmd == add)     : { regs[r1] = r1val + r2val; }
+            (cmd == sub)     : { regs[r1] = r1val - r2val; }
+            (cmd == mov_imm) : { regs[r1] = immed; }
+          esac
+          r.valid, r.value = true, regs[r1];
+        } else { r.valid = false; }
+    }
+</code></pre>
+<p>Optionally, one may use the <code>-M</code> argument in UCLID5 to infer the modifies sets which computes the modified variables using the LHS assignments within the procedure and the modifies sets computed for any procedure callswithin the procedure body. Example usage: <code>uclid -M filename.ucl</code>. </p>
+<h4 id="calling-procedures"><a class="header" href="#calling-procedures">Calling Procedures</a></h4>
+<p>Procedures are called using the <code>call</code> keyword. The syntax of this is rather unconvential.</p>
+<pre><code class="language-uclid">	call (variable to store return value(s)) = &lt;procedure_name&gt; (argument list);
+</code></pre>
+<p>For example the above procedure can be called as follows.</p>
+<pre><code class="language-uclid">	call (result') = exec_cmd();
+</code></pre>
+<p>Note how the return value can even be stored into a primed variable (in the <code>next</code>) block. Procedure calls allow complex sequential computation to be made even in the <code>next</code> block.</p>
+<h4 id="procedure-inlining"><a class="header" href="#procedure-inlining">Procedure Inlining</a></h4>
+<p>A procedure also contains an optional no-inline/inline qualifier which instructions the UCLID5 compiler to either inline the procedure body or use the <code>modifies</code>, <code>requires</code> and <code>ensures</code> statements as a summary of the procedure call.</p>
+<p>Without specifying a qualifier or if <code>inline</code> is specified:</p>
+<pre><code class="language-uclid">    procedure [inline] exec_cmd() returns (r : result_t)
+</code></pre>
+<p>The body of the procedure is <a href="https://en.wikipedia.org/wiki/Lambda_calculus">beta-reduced</a> using the arguments (if any exist) and inlined at the call site. For the example above, because there are no arguments, <code>call exec_cmd()</code> would simply be replaced with the body of the procedure.</p>
+<p>The following is an example of using <code>noinline</code>:</p>
+<pre><code class="language-uclid">    procedure [noinline] exec_cmd() returns (r : result_t)
+</code></pre>
+<p>In the definition above, the <code>noinline</code> qualifier indicates to the compiler to use the specification defined by the <code>modifies</code>, <code>requires</code> and <code>ensures</code> statements instead of using the body of the procedure. In this case, the variables in the <code>modifies</code> set are havoced (new symbolic constants are created), the <code>requires</code> statements are asserted and the <code>ensures</code> statements are assumed. This effectively replaces the procedure call <code>call exec_cmd()</code> with the following:</p>
+<pre><code class="language-uclid">havoc regs;
+assert valid;
+assume cmd == add =&gt; regs = old(regs)[r1 -&gt; old(regs)[r1] + old(regs)[r1]];
+assume cmd == sub ==&gt; regs == old(regs)[r1 -&gt; old(regs)[r1] - old(regs)[r2]];
+assume cmd == mov_imm ==&gt; regs == old(regs)[r1 -&gt; immed];
+</code></pre>
+<h4 id="instance-procedure-calls"><a class="header" href="#instance-procedure-calls">Instance Procedure Calls</a></h4>
+<p><span style="color:orange">NOTE</span>: This section is experimental; instance procedure calls in the next block is not well documented. If your goal is the separately define module state and procedures, please refer to <a href="language/modules.html">module concatenation</a>.</p>
+<p>So far, all procedure calls have been made within their defining modules. However, sometimes one  may wish to call procedures from another <a href="language/modules.html">instance</a> defined within the module. By declaring the instance name before the name of the procedure as follow:</p>
+<pre><code class="language-uclid">module A {
+    // ... other stuff
+    procedure foo() {
+        // ... other stuff
+    }
+}
+
+module main {
+    instance a: A();
+    
+    procedure bar() {
+        call a.foo();
+    }
+}
+</code></pre>
+<p>In this example, two modules <code>A</code> and <code>main</code> are defined. An instance of <code>A</code> is instantiated in module <code>main</code> and the procedure <code>bar</code> within <code>main</code> makes an instance procedure call to <code>a.foo()</code>. This executes the procedure <code>foo</code> as if the variables of instance <code>a</code> and <code>foo</code> were defined within the <code>main</code> module.</p>
+<h1 id="modules"><a class="header" href="#modules">Modules</a></h1>
+<p>UCLID5 provides the the user the ability to model and verify systems in a compositional manner, through the use of modules. All the previous examples had only a single module, the <code>main</code> module. However, one can define multiple modules and <em>instantiate</em> them, allowing module features to be shared across different models as well as different low level implementations for the same high-level interfaces. We illustrate this capability through an example model for a CPU.</p>
+<p>Consider a module <code>common</code> which consists all the type definitions for the datatypes used in the CPU module. </p>
+<pre><code class="language-uclid">// This module declares types that are used in the rest of the model.
+module common {
+	// addresses are uninterpreted types.
+	type addr_t = bv8;
+	type word_t = bv8;
+	// memory
+	type mem_t = [addr_t]word_t;
+	// CPU operation.
+	type op_t = enum { op_mov, op_add, op_sub, op_load, op_store };
+}
+</code></pre>
+<p>These type definitions can then be conveniently imported into other modules. For example we show the <code>cpu</code> module which loads these type definitions. This is an excerpt of the example available <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex3.2-cpu.ucl">here</a>.</p>
+<pre><code class="language-uclid">module cpu {
+  type addr_t = common.addr_t;
+  type mem_t  = common.mem_t;
+  type word_t = common.word_t;
+  type op_t   = common.op_t;
+
+  // remainder of the cpu module
+}
+</code></pre>
+<h4 id="instantiating-modules"><a class="header" href="#instantiating-modules">Instantiating Modules</a></h4>
+<p>The <code>cpu</code> module can then be <em>instantiated</em> as a part of the another module. We give an example where this is the <code>main</code> module, an excerpt from <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex3.3-cpu.ucl">here</a>.</p>
+<pre><code class="language-uclid">module main {
+  // ...  
+  // Create two instances of the CPU module.
+  instance cpu_i_1 : cpu(imem : (imem));
+  instance cpu_i_2 : cpu(imem : (imem));
+
+  init {
+  	// ...
+  }
+
+  next {
+  	// ...
+  	// Invoke CPU 1 and CPU 2.
+  	next (cpu_i_1);
+  	next (cpu_i_2);
+  }
+  // ...
+}
+</code></pre>
+<p>The <code>main</code> module consists of two instances of the <code>cpu</code> module, called as <code>cpu_i_1</code> and <code>cpu_i_2</code>. These modules can be stepped using the <code>next</code> function as is done in the <code>next</code> block of the <code>main</code> module. </p>
+<p>The overall model must have a single top-level module, which by default is the <code>main</code> module. The name of the top-level module module can be provided using the command-line option <code>-m/--main</code> to UCLID5.</p>
+<pre><code>	uclid -m &lt;name of top-level module&gt; &lt;files&gt;
+</code></pre>
+<p>Also, the module files must be specified in the order of the dependencies. For the CPU example, <code>main.ucl</code> depends on <code>cpu.ucl</code> which in turn depends on <code>common.ucl</code>, the UCLID5 tool should be invoked as follows.</p>
+<pre><code>	uclid common.ucl cpu.ucl main.ucl
+</code></pre>
+<h4 id="module-concatenation"><a class="header" href="#module-concatenation">Module Concatenation</a></h4>
+<p>Up until now, we have only defined uniquely named modules. However, this is limiting in the following ways:</p>
+<ol>
+<li>Modules with many definitions result in a large file.</li>
+<li>Verifying modules with varying definitions is cumbersome because one would need to manually swap out the definition everytime or create multiple copies of module files with the different implementations.</li>
+</ol>
+<p>Thus UCLID5 allows module concatentation (a purely syntactic feature) to alleviate these issues by simply concatenating all defined modules with the same name into one module containing all the definitions defined in each module. For example, lets say we have the following files <code>A_x.ucl</code> and <code>A_y.ucl</code>:</p>
+<pre><code class="language-uclid">// Filename: A_x.ucl
+module A {
+    var x: integer;
+    procedure foo()
+        modifies x;
+    {
+        x = x + 1;
+    }
+}
+</code></pre>
+<pre><code class="language-uclid">// Filename: A_y.ucl
+module A {
+    var y: integer;
+    procedure bar()
+        modifies y;
+    {
+        y = y + 1;
+    }
+}
+</code></pre>
+<p>Then running <code>uclid A_x.ucl A_y.ucl</code> results in running the concatenated module <code>A</code>:</p>
+<pre><code class="language-uclid">module A {
+    var x: integer;
+    var y: integer;
+
+    procedure foo()
+        modifies x;
+    {
+        x = x + 1;
+    }
+
+    procedure bar()
+        modifies y;
+    {
+        y = y + 1;
+    }
+}
+</code></pre>
+<h1 id="language-reference"><a class="header" href="#language-reference">Language Reference</a></h1>
+<h2 id="todo"><a class="header" href="#todo">TODO</a></h2>
+<h1 id="uclid5-verification"><a class="header" href="#uclid5-verification">UCLID5 Verification</a></h1>
+<ul>
+<li><a href="verification/specification.html">Specification</a></li>
+<li><a href="verification/bmc.html">Bounded Model Checking</a></li>
+<li><a href="verification/induction.html">Inductive Proofs</a></li>
+<li><a href="verification/refinement.html">Verifying Refinement</a></li>
+<li><a href="verification/hyperproperties.html">Verifying Hyperproperties</a></li>
+<li><a href="verification/floydhoare.html">Floyd-Hoare</a></li>
+<li><a href="verification/smto.html">SMTO</a></li>
+</ul>
+<h1 id="specification"><a class="header" href="#specification">Specification</a></h1>
+<h2 id="embedded-specifications"><a class="header" href="#embedded-specifications">Embedded Specifications</a></h2>
+<p>Assume, axiom</p>
+<h2 id="system-specifications"><a class="header" href="#system-specifications">System Specifications</a></h2>
+<p>property, invariant</p>
+<h3 id="linear-temporal-logic-ltl-specifications"><a class="header" href="#linear-temporal-logic-ltl-specifications">Linear Temporal Logic (LTL) Specifications</a></h3>
+<p>Uclid5 supports the specification of module behavior using linear temporal logic (LTL).</p>
+<h1 id="bounded-model-checking-bmc"><a class="header" href="#bounded-model-checking-bmc">Bounded Model Checking (BMC)</a></h1>
+<p>Bounded Model Checking (BMC) is a useful technique for bounded verification and bug finding.</p>
+<p>(Note: the <code>unroll</code> command is a now deprecated command which performs bounded model checking for non-LTL properties only. <code>bmc</code> performs bounded model checking for both LTL and non-LTL properties)</p>
+<p>The Fibonacci example (introduced in <a href="verification//introduction/firstlook.html">A first look at UCLID5</a>) is reproduced below but now with the <code>bmc</code> command, which has the same semantics as the <code>unroll</code> command.</p>
+<pre><code class="language-uclid">module main {
+    var a, b : integer;
+    
+    init {
+        a = 0; b = 1;
+    }
+
+    next {
+        a’, b’ = b, a + b;
+    }
+
+    // This time the invariant will be checked by BMC 
+    // 	instead of an inductiveness check.
+    invariant a_le_b: a &lt;= b;
+
+    control {
+    	// The bmc command
+        bmc (3);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>The <code>bmc</code> command unrolls the <code>next</code> block for 3 steps, and generates an SMT query for each step which checks whether the system can violate the property at that step.</p>
+<h2 id="checking-embedded-specifications"><a class="header" href="#checking-embedded-specifications">Checking Embedded Specifications</a></h2>
+<p>To demonstrate checking embedded specifications,
+we now present a variant of the above Fibonacci example.</p>
+<pre><code class="language-uclid">module main {
+    // System description.
+    var a, b : integer;
+    const flag : boolean;
+
+    procedure set_init()
+        modifies a, b;
+    {
+        havoc a;
+        havoc b;
+        // embedded assumptions.
+        assume (a &lt;= b);
+        assume (a &gt;= 0 &amp;&amp; b &gt;= 0);
+        assume (flag);
+    }
+
+    init {
+        call set_init();
+    }
+    next {
+        a', b' = b, a + b;
+        if (flag) {
+            assert (a' &lt;= b');
+        } else {
+            assert (false);
+        }
+    }
+
+    // Proof script.
+    control {
+        unroll (3);
+        check;
+        print_results;
+    }
+}   
+</code></pre>
+<p>We have introduced the constant <code>flag</code> on line 4. </p>
+<pre><code class="language-uclid">    const flag : boolean;
+</code></pre>
+<p>A constant holds a symbolic value that does not change during computation.
+The initial value of the constant is assigned non-deterministically and
+can be controlled using assumptions.
+A second difference with between this and the first example is on lines 12–14, 23 and 25.</p>
+<p>Line 12-14:</p>
+<pre><code class="language-uclid">        assume (a &lt;= b);
+        assume (a &gt;= 0 &amp;&amp; b &gt;= 0);
+        assume (flag);
+</code></pre>
+<p>Line 23:</p>
+<pre><code class="language-uclid">            assert (a' &lt;= b');
+</code></pre>
+<p>Line 25:</p>
+<pre><code class="language-uclid">            assert (false);
+</code></pre>
+<p>Instead of using a module-level assumption declarations as in the first example,
+we have three embedded assumptions in the set init procedure on lines 12–14,
+and two embedded assertions in the next block on lines 23 and 25.</p>
+<p>A module-level assumption is assumed to hold for the solver at every step of execution,
+while an embedded assumption is assumed “instantaneously” at the location of the statement.
+In particular, the assumptions on lines 12–14 tells the solver
+to assume that <code>\\( a \leq b \\)</code>, <code>\\( a \geq 0 \\)</code> and <code>\\( b \leq 0 \\)</code> at the end of the <code>set_init</code> procedure.
+Notice that we are not assigning specific values to a and b, instead we are asking Uclid5 to consider potential values of <code>a</code> and <code>b</code> such that <code>a ≤ b</code>, <code>a ≥ 0</code> and <code>b ≥ 0</code>.
+Similarly the assertions on lines 23 and 25 are evaluated at that specific location in the
+code. In particular the assertion on line 23 is only checked when <code>flag</code> is <code>true</code>,
+while the assertion one line 25 is checked when <code>flag</code> is <code>false</code>.
+Since <code>flag</code> is always <code>true</code> in our model, the assertion on line 25 will never fire.
+In contrast, note that a module-level assertion would be evaluated after the init block
+and after each execution of the next block.</p>
+<p>Note that we use <code>unroll</code> here again because <code>bmc</code> currently ignores embedded specifications.
+<a href="https://github.com/uclid-org/uclid/issues/181">This will be fixed</a> in a future release.</p>
+<h2 id="checking-ltl-specifications"><a class="header" href="#checking-ltl-specifications">Checking LTL Specifications</a></h2>
+<p>We demonstrate checking LTL Specifications using BMC
+with a UCLID5 model of an intersection with two traffic lights.</p>
+<p>The full UCLID5 model:</p>
+<pre><code class="language-uclid">module main
+{
+    type light_t = enum { red, yellow, green };
+    var step1, step2 : integer;
+    var light1, light2 : light_t;
+
+    init {
+        light1, step1 = red,   2;
+        light2, step2 = green, 1;
+    }
+
+    next {
+        call (light1', step1') = next_light(light1, step1);
+        call (light2', step2') = next_light(light2, step2);
+    }
+
+    procedure next_light(light : light_t, step : integer)
+        returns (lightP : light_t, stepP: integer)
+    {
+        if (step == 0) {
+            case
+            (light == green) : {
+                lightP = yellow;
+                stepP = step;
+            }
+            (light == yellow) : {
+                lightP = red;
+                stepP = 2;
+            }
+            (light == red) : {
+                lightP = green;
+                stepP = 1;
+            }
+            esac
+        } else {
+            lightP = light;
+            stepP = step - 1;
+        }
+    }
+
+    property[LTL] always_one_red: G(light1 == red || light2 == red);
+    // property[LTL] eventually_green:
+    //     G(F(light1 == green)) &amp;&amp; G(F(light2 == green));
+
+    control {
+        v = bmc(10);
+        check;
+        print_results;
+        v.print_cex(light1, step1, light2, step2);
+    }
+}
+
+</code></pre>
+<p>Lines 3–39 define the functionality of the traffic light;
+this part of the model should be familiar.</p>
+<pre><code class="language-uclid">    type light_t = enum { red, yellow, green };
+    var step1, step2 : integer;
+    var light1, light2 : light_t;
+
+    init {
+        light1, step1 = red,   2;
+        light2, step2 = green, 1;
+    }
+
+    next {
+        call (light1', step1') = next_light(light1, step1);
+        call (light2', step2') = next_light(light2, step2);
+    }
+
+    procedure next_light(light : light_t, step : integer)
+        returns (lightP : light_t, stepP: integer)
+    {
+        if (step == 0) {
+            case
+            (light == green) : {
+                lightP = yellow;
+                stepP = step;
+            }
+            (light == yellow) : {
+                lightP = red;
+                stepP = 2;
+            }
+            (light == red) : {
+                lightP = green;
+                stepP = 1;
+            }
+            esac
+        } else {
+            lightP = light;
+            stepP = step - 1;
+        }
+    }
+</code></pre>
+<p>The current state of the lights are stored in the variables <code>light1</code> and <code>light2</code>,
+and these switch from <code>red</code> to <code>green</code> to <code>yellow</code> and back to <code>red</code>.
+The variables <code>step1</code> and <code>step2</code> can be thought of timers,
+and ensure that each light stays red for three transitions,
+green for two transitions and stays yellow for a single transition.</p>
+<p>The LTL properties are on lines 41-43.</p>
+<pre><code class="language-uclid">    property[LTL] always_one_red: G(light1 == red || light2 == red);
+    // property[LTL] eventually_green:
+    //     G(F(light1 == green)) &amp;&amp; G(F(light2 == green));
+</code></pre>
+<p>The property <code>always_one_red</code> specifies a safety property which states
+that at least one of the two lights must be <code>red</code> in every particular cycle.
+The notation <code>G(φ)</code> refers to the LTL globally operator,
+while the notation <code>F(φ)</code> refers to the LTL eventually (future) operator.
+Other supported operators include next-time: <code>X(φ)</code>, (strong-)until: <code>U(φ1, φ2)</code>
+and weak-until: <code>W(φ1, φ2)</code>.
+<code>always_one_red</code> is a safety property.
+The property <code>eventually_green</code> is an example of liveness property,
+and specifies that both lights become <code>green</code> infinitely often.
+The command for bounded verification of LTL properties is the <code>bmc</code> command.
+This is invoked on line 46.</p>
+<pre><code class="language-uclid">        v = bmc(10);
+</code></pre>
+<p>Note that, currently, a UCLID5 model can only have one LTL property at a time.
+<a href="https://github.com/uclid-org/uclid/issues/128">This will be fixed</a> in a future release.</p>
+<h1 id="inductive-proofs"><a class="header" href="#inductive-proofs">Inductive Proofs</a></h1>
+<p>Consider the following UCLID5 module that represents the Fibonacci sequence, and
+suppose we want to perform unbounded verification for the property \(a \leq
+b\). To do this, instead of the unroll command, we can use the induction
+command.</p>
+<pre><code class="language-uclid">module main {
+  var a, b : integer;
+
+  init {
+    a = 0; b = 1;
+  }
+  next {
+    a', b' = b, a + b;
+  }
+
+  // First inductive invariant
+  invariant a_le_b: a &lt;= b;
+
+  control {
+    // The induction command.
+    induction;
+    check;
+    print_results;
+  }
+}
+</code></pre>
+<p>When using the induction command as above, UCLID5 checks</p>
+<ol>
+<li>that the init block guarantees that the invariants hold and</li>
+<li>that, assuming the invariants hold for some state, taking a step of the
+transition from that state as defined in the next block guarantees the
+invariants will continue to hold.</li>
+</ol>
+<p>The induction check for the example above will fail the second check: \(a =
+-1\) and \(b = 0\) satisfy the specification but taking a step from that
+state will result in \(a = 0\) and \(b = -1\), which does not satisfy the
+specification. We can remedy this by adding another invariant to the model.</p>
+<pre><code class="language-uclid">module main {
+  // ... same as above 
+
+  invariant a_le_b: a &lt;= b;
+  invariant a_ge_0: a &gt;= 0;
+  
+  // ... same as above
+}
+</code></pre>
+<p>Now with the additional, invariant <code>a_ge_0</code> the combined invariants are
+inductive, and the check passes.</p>
+<h2 id="k-induction"><a class="header" href="#k-induction">k-Induction</a></h2>
+<p>In the previous example, we used 1-induction to verify that the Fibonacci
+sequence is increasing. UCLID5 also supports k-induction, which you can use by
+providing the induction command with a positive integer argument. </p>
+<p>When using k-induction, UCLID5 checks</p>
+<ol>
+<li>that the first k steps, starting from the init block, all guarantee that the invariants hold and</li>
+<li>that, assuming the invariants hold for k consecutive states, taking one more step of the
+transition guarantees the invariants will continue to hold.</li>
+</ol>
+<p>To better understand k-induction, consider the following UCLID5 module.</p>
+<pre><code class="language-uclid">module main {
+  var x : integer;
+  var y : integer;
+  var b : boolean;
+
+  init {
+    b = true;
+    x = 0;
+    assume (y &gt; 0);
+  }
+
+  next {
+    b' = !b;
+    if (b) {
+        x' = x + 3;
+    } else {
+        x' = x - 2;
+    }
+    y' = y + x;
+  }
+
+  invariant x_ge_0: x &gt;= 0;
+  invariant y_gt_0: y &gt; 0;
+
+  control {
+    v = induction(1);
+    check;
+    print_results;
+  }
+}
+</code></pre>
+<p>The 1-induction check for the module above will fail. Fortunately, updating the control block to use 2-induction will make the proof pass.</p>
+<pre><code class="language-uclid">module main {  
+  // ... same as above
+
+  control {
+      v = induction(2);
+      check;
+      print_results;
+  }  
+}
+</code></pre>
+<h1 id="verifying-refinement"><a class="header" href="#verifying-refinement">Verifying Refinement</a></h1>
+<h2 id="refinement-and-simulation"><a class="header" href="#refinement-and-simulation">Refinement and simulation</a></h2>
+<p>We say that system \(B\) <em>refines</em> system \(A\) if any step
+taken by \(B\) can be simulated by a sequence of steps by system \(A\) such that the observed effects are identical. As a toy example, consider the two state machines below. Machine \(A\) implements a one-bit counter and outputs \(\texttt{0}\) and \(\texttt{1}\) when in states \(0\) and \(1\) respectively. Machine \(B\) on the other hand implements a two-bit counter: also outputting \(\texttt{0}\) and \(\texttt{1}\) but now in states \(00\) and \(10\) respectively.</p>
+<img src="verification//assets/refinement2.png"/>
+<p>The machine \(A\) on the left is refined by the machine \(B\).
+This is illustrated with the following executions. Any execution of machine \(B\) cycles through its states generating the outputs 
+\(\texttt{0}\) and \(\texttt{1}\) in the green and pink states respectively. But any such execution can be matched with an execution of \(A\), which also generates the same sequence of outputs (albeit in different states). The state coloring identifies a <em>refinement relation</em>: whatever happens in the green (pink) states in \(B\) also happens in the green (pink) states in \(A\).</p>
+<img src="verification//assets/refinement3.png"/>
+<p>We observe that third machine \(C\) also refines \(A\) but in a different way: can you find the refinement relation in this case?</p>
+<h2 id="refinement-proofs-in-uclid5"><a class="header" href="#refinement-proofs-in-uclid5">Refinement proofs in UCLID5</a></h2>
+<p>We can use the features in UCLID5 to specify and hence verify that one system refines another. Typically such a <em>refinement proof</em> takes the form of a following diagram:</p>
+<img src="verification//assets/refinement4.png"/>
+<p>Here we want to prove that the system \(A\) (above) is refined by the system \(B\) (below). This requires us to define a refinement relation between states in the two systems as we saw earlier.
+The proof itself starts by assuming that two states, one each from \(A\) and \(B\), which satisfy the refinement relation.
+In our example these are \(a_1\) and \(b_1\) respectively.</p>
+<p>Then system \(B\) is transitioned for one step, while \(A\) is transitioned for zero or one steps (also called a stuttering transition). Finally the proof checks that the states that result - 
+\(a_2\) and \(b_2\) in our example - also satisfy the refinement relation. This check sets up an inductive proof that \(A\) simulates \(B\) - or \(B\) refines \(A\) as depicted in the figure below.</p>
+<img src="verification//assets/refinement5.png"/>
+<p>An example of refinement checking, the verification of a
+simple pipelined datapath, is illustrated in detail in the code <a href="https://github.com/uclid-org/uclid/blob/master/examples/simple-datapath.ucl">here</a>. Observe that in this example the <code>spec</code> module describes the system that simulates the one described by the <code>impl</code> module.</p>
+<h1 id="hyperproperties"><a class="header" href="#hyperproperties">Hyperproperties</a></h1>
+<p>UCLID5 supports the verification of hyperproperties at both the module level and procedural level.</p>
+<h4 id="verifying-module-hyperproperties"><a class="header" href="#verifying-module-hyperproperties">Verifying Module Hyperproperties</a></h4>
+<p>One of the major benefits of using UCLID5 is the native support for creating instances. This allows the user to instantiate multiple instances that produce the traces in a hyperproperty. In this section, we present an intuitive way to verify hyperproperties. In the following sections, we present additional sugar-syntax for proving hyperinvariants of modules.</p>
+<p>As an example, consider a transition system \(A\): \[A = (V,I,\delta) = ( \{(a, x) | a \in \mathbb{N}, x \in \mathbb{N} \}, \{(a, 0) | a \in\mathbb{N}\}, \{ ((a, x), (a^\prime, x+a)) | a,a^\prime,x\in\mathbb{N}\})\]</p>
+<p>with system input \(a\), state variable \(x\), the set of initial states \(I\) and the transition relation \(\delta\).</p>
+<p>A hyperproperty one may wish to prove is that the system is deterministic given that the inputs are the same, which can be specified as: \[ \forall i\in\mathbb{N}. (\pi_1^i.a = \pi_2^i.a) \implies (\pi_1^i.x = \pi_2^i.x) \]</p>
+<p>where \(\pi_1, \pi_2\) are traces of the system \(A\) and \(\pi_1^i, \pi_2^i\) are the \(i\)-th states of the trace \(\pi_1, \pi_2\) respectively. We also write \(\pi_1^i.a\) to mean the value of the variable \(a\) at state \(\pi_1^i\) and similarly for other other variable and traces.</p>
+<p>To prove such a property, one would first define the transition system \(A\) like this</p>
+<pre><code class="language-uclid">// Filename: a.ucl
+module A {
+    input a: integer;
+    var x: integer;
+
+    init {
+        x = 0;
+    }
+
+    next {
+        x' = x + a;
+    }
+}
+</code></pre>
+<p>and then create a main module which consists of the proof of the specification. The proof would consist of instantiating two traces of \(A\), \(\pi_1\) and \(\pi_2\), and specifying the invariant \( \forall i\in\mathbb{N}. \pi_1^i.x = \pi_2^i.x \). Note that the antecedent of the implication above is implicitly assumed when \(a\) is used as an input to both instances (and hence are always equal between the two traces).</p>
+<pre><code class="language-uclid">// Filename: a_determinism.ucl
+module main {
+    var a: integer;
+
+    // Two instances of A
+    instance pi1: A(a: (a));
+    instance pi2: A(a: (a));
+
+    // Hyperproperty
+    invariant determinism: pi1.x == pi2.x;
+
+    // Step both instances by executing them synchronously and havoc the input a
+    next {
+        havoc a;
+        next(pi1); next(pi2);
+    }
+
+    // Use inductive model checking to prove the hyperproperty over infinite traces
+    control {
+        v = induction;
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>Simply run <code>uclid a.ucl a_determinism.ucl</code> to obtain the results.</p>
+<pre><code>% uclid a.ucl a_determinism.ucl
+Successfully instantiated 2 module(s).
+2 assertions passed.
+0 assertions failed.
+0 assertions indeterminate.
+  PASSED -&gt; v: induction_base [Step #0] property determinism @ a_determinism.ucl, line 9
+  PASSED -&gt; v: induction_step [Step #1] property determinism @ a_determinism.ucl, line 9
+Finished execution for module: main.
+</code></pre>
+<h4 id="hyperinvariants"><a class="header" href="#hyperinvariants">Hyperinvariants</a></h4>
+<p>Alternatively, one may specify the hyperproperty of the module within the module itself as such:</p>
+<pre><code class="language-uclid">// Filename: a_hyperinvariant.ucl
+module A {
+    input a: integer;
+    var x: integer;
+
+    init {
+        x = 0;
+    }
+
+    next {
+        x' = x + a;
+    }
+
+    hyperinvariant[2] determinism: (a.1 == a.2) ==&gt; (x.1 == x.2);
+
+    control {
+        v = bmc(10);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p><span style="color:orange">NOTE</span>: UCLID5 only supports hyperinvariant checking for bounded model checking. To verify the module above, run <code>uclid -m A a_hyperinvariant.ucl</code> (this indicates to the solver to run the control block in module <code>A</code>, which defaults to <code>main</code> if not specified).</p>
+<h4 id="hyperaxioms"><a class="header" href="#hyperaxioms">HyperAxioms</a></h4>
+<p>In addition to the <code>hyperinvariant</code> syntax, one can specify a <code>hyperaxiom</code>, which are assumptions over multiple traces at each step. Continuing with our running example, one may rewrite the antecedent of the specification as an axiom:</p>
+<pre><code class="language-uclid">// Filename: a_hyperaxiom.ucl
+module A {
+    input a: integer;
+    var x: integer;
+
+    init {
+        x = 0;
+    }
+
+    next {
+        x' = x + a;
+    }
+
+    hyperaxiom[2]     same_inputs: (a.1 == a.2);
+    hyperinvariant[2] determinism: (x.1 == x.2);
+
+    control {
+        v = bmc(10);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p><span style="color:orange">NOTE</span>: Hyperaxioms are only supported for bounded model checking.</p>
+<h4 id="verifying-procedural-hyperproperties--modular-product-verification"><a class="header" href="#verifying-procedural-hyperproperties--modular-product-verification">Verifying Procedural Hyperproperties / Modular Product Verification</a></h4>
+<p>Up to this point, procedural properties have been specified using <code>modifies</code>, <code>requires</code> and <code>ensures</code> using the module variables and procedure arguments. UCLID5 also supports the verification of hyperproperties of procedural code.</p>
+<pre><code class="language-uclid">module main {
+    procedure isGreaterThanOrEqual(p: integer, q:integer) returns (res: boolean)
+    ensures ((res == true) ==&gt; ( p &gt;= q));
+    ensures ((res == false) ==&gt; ( p &lt; q));
+    ensures ((p.1 == p.2 &amp;&amp; q.1 == q.2)  ==&gt; (res.1 == res.2)); //determinism
+    {
+        res = true;
+        if( p &lt; q)
+        {
+            res = false;
+        }
+    }
+
+    control {
+        v = verify(isGreaterThanOrEqual);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>The example above proves that the isGreaterThanOrEqual to indicator function is deterministic based on the inputs specified by line 5:</p>
+<pre><code class="language-uclid">    ensures ((p.1 == p.2 &amp;&amp; q.1 == q.2)  ==&gt; (res.1 == res.2)); //determinism
+</code></pre>
+<p>Similar to the hyperinvariant syntax, the variable of the \(i\)-th trace is referred to using the <code>.i</code> operator, where <code>i</code> is the trace number.</p>
+<p><span style="color:orange">NOTE</span>: As of current, procedural hyperproperties only support the verification of pure functions that do not modify module state.</p>
+<h1 id="floyd-hoare"><a class="header" href="#floyd-hoare">Floyd-Hoare</a></h1>
+<h1 id="smto"><a class="header" href="#smto">SMTO</a></h1>
+<h1 id="uclid5-synthesis"><a class="header" href="#uclid5-synthesis">UCLID5 Synthesis</a></h1>
+<ul>
+<li><a href="synthesis/basics.html">Synthesis Basics</a></li>
+<li><a href="synthesis/sygus.html">Syntax Guided Synthesis</a></li>
+<li><a href="synthesis/smo.html">SyMO</a></li>
+</ul>
+<h1 id="synthesis-basics"><a class="header" href="#synthesis-basics">Synthesis Basics</a></h1>
+<p>UCLID5 supports a full integratation of Syntax-Guided Synthesis(SyGuS) across all verification modes. Given any UCLID5 model containing a synthesis function and a verification command and an external SyGuS solver such as CVC5, UCLID5 will generate a SyGuS problem that aims to find a body for the synthesis function such that the UCLID5 model passes verification.</p>
+<h3 id="synthesis-functions"><a class="header" href="#synthesis-functions">Synthesis Functions</a></h3>
+<p>Synthesis functions are identified by the keyword phrase <code>synthesis function</code>: they have a list of input types and an output type, similar to uninterpreted functions.
+Synthesis functions can be declared <code>function</code> declaration. These functions are typed, mapping a tuple of typed arguments to a return type. </p>
+<pre><code class="language-uclid">	synthesis function &lt;function_name&gt;(&lt;input_type_list&gt;) : &lt;output_type&gt;;
+</code></pre>
+<p>For example, the following synthesis function models the mapping of an instrution to an opcode.</p>
+<pre><code class="language-uclid">	synthesis function inst2op(i : word_t) : op_t;
+</code></pre>
+<p>Synthesis functions can be used throughout uclid code in exactly the same way as uninterpreted functions. The SyGuS problem generated by UCLID5 will try to find bodies for all synthesis functions in the UCLID5 model.</p>
+<h3 id="invoking-a-sygus-solver"><a class="header" href="#invoking-a-sygus-solver">Invoking a SyGuS solver</a></h3>
+<p>To solve a synthesis problem with UCLID5, UCLID5 should be called with the command line argument <code>-s /path/to/sygus/solver</code>. This will trigger UCLID5 to generate a synthesis problem instead of a verification problem. </p>
+<h3 id="example-synthesis-problem"><a class="header" href="#example-synthesis-problem">Example Synthesis Problem</a></h3>
+<p>The following example uses a synthesis function to strengthen the invariant <code>hole</code>, such that the invariant passes verification by induction. </p>
+<pre><code class="language-uclid">module main {
+  // Part 1: System Description .
+  var a , b : integer;
+
+  init {
+    a , b = 0 , 1;
+  }
+  next {
+    a ' , b ' = b , a + b ;
+  }
+
+  // Part 2: System Specification .
+  invariant a_le_b : a &lt;= b;
+
+  // Part 3: Synthesis Integration
+  synthesis function h (x : integer , y : integer ) : boolean ;
+  invariant hole : h(a , b ) ;
+
+  // Part 4: Proof Script .
+  control {
+    induction ;
+    check ;
+    print_results ;
+  }
+}
+</code></pre>
+<h1 id="syntax-guided-synthesis"><a class="header" href="#syntax-guided-synthesis">Syntax Guided Synthesis</a></h1>
+<h1 id="smo"><a class="header" href="#smo">SMO</a></h1>
+<h1 id="advanced-features"><a class="header" href="#advanced-features">Advanced Features</a></h1>
+<h1 id="idiomatic-uclid5"><a class="header" href="#idiomatic-uclid5">Idiomatic UCLID5</a></h1>
+<h1 id="tooling"><a class="header" href="#tooling">Tooling</a></h1>
+<h2 id="options"><a class="header" href="#options">Options</a></h2>
+<p>UCLID5 supports multiple command-line options, which include the following.</p>
+<pre><code class="language-shell">-m, --main &lt;Module&gt;                 Name of the main module.
+-s, --solver &lt;Cmd&gt;                  Command line to invoke external SMT solver binary.
+-y, --synthesizer &lt;Cmd&gt;             Command line to invoke SyGuS synthesizer.
+-g, --smt-file-generation &lt;value&gt;   File prefix to generate smt files for each assertion.
+-X, --exception-stack-trace         Print exception stack trace.
+-f, --sygus-format                  (deprecated, enabled by default)
+                                    Generate the standard SyGuS format.
+-l, --llama-format                  Generates synthesis format for llama.
+-e, --enum-to-numeric               Enable conversion from EnumType to NumericType
+-M, --mod-set-analysis              Infers modifies set automatically.
+-u, --uf-to-array                   Enable conversion from Uninterpreted Functions to Arrays.
+-w, --verbosity &lt;value&gt;             Set verbosity level (0-4)
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="specify-main-module--m"><a class="header" href="#specify-main-module--m">Specify main module (-m)</a></h3>
+<p>Suppose we have a file <code>model.ucl</code> with multiple modules:</p>
+<pre><code class="language-uclid">module A {
+    ...
+    property p_a : ...;
+    control {
+        v = bmc(5);
+        check;
+        print_results;
+    }
+}
+module B {
+    ...
+    property p_b : ...;
+    control {
+        v = verify(...);
+        check;
+        print_results;
+    }
+}
+module main {
+    instance a : A();
+    instance b : B();
+    ...
+    property p_main : ...;
+    control {
+        v = induction;
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>UCLID5 requires a top-level module and proves properties declared in that module.
+By default, UCLID5 looks for a module named <code>main</code> and uses it as the top-level module.
+In this case, running <code>uclid model.ucl</code> signals UCLID5 to execute the control block
+in <code>main</code> and prove property <code>p_main</code>. If we want to prove properties in module
+<code>A</code> or <code>B</code>, we need to specify a top-level module other than <code>main</code>. The <code>-m</code> flag
+is used for this purpose. For example,</p>
+<pre><code class="language-shell">uclid model.ucl -m A
+</code></pre>
+<p>selects <code>A</code> as the top-level module and UCLID5 will attempt to prove property <code>p_a</code>
+using <code>bmc</code>.</p>
+<h3 id="invoke-external-smt-solver-binary--s"><a class="header" href="#invoke-external-smt-solver-binary--s">Invoke external SMT solver binary (-s)</a></h3>
+<p>UCLID5 supports multiple backend SMT solvers via the SMTLIB2 interface. By default,
+UCLID5 uses the Z3 solver. To invoke an alternative solver, such as CVC4, we can use
+the <code>-s</code> option. For example,</p>
+<pre><code class="language-shell">uclid &lt;file.ucl&gt; -s cvc4
+</code></pre>
+<p>// ### Invoke SyGuS synthesizer</p>
+<h3 id="generate-smt-files-for-each-assertion--g"><a class="header" href="#generate-smt-files-for-each-assertion--g">Generate SMT files for each assertion (-g)</a></h3>
+<p>Using the <code>-g</code> flag, UCLID5 can generate<code>.smt</code> files which contain the SMT formulae
+for each property declared. <code>-g</code> also expects a prefix for the filenames. For example,</p>
+<pre><code class="language-shell">uclid &lt;file.ucl&gt; -g &quot;debug&quot;
+</code></pre>
+<p>generates SMT files with filenames with a pattern of <code>debug-xxx.smt</code> in the directory
+where the command is executed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

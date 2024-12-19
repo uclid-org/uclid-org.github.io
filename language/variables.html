@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Variables - uclid-docs</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for UCLID5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../introduction/installation.html"><strong aria-hidden="true">1.2.</strong> Installation Guide</a></li><li class="chapter-item expanded "><a href="../introduction/firstlook.html"><strong aria-hidden="true">1.3.</strong> A first look at UCLID5</a></li></ol></li><li class="chapter-item expanded "><a href="../language/language.html"><strong aria-hidden="true">2.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../language/datatypes.html"><strong aria-hidden="true">2.1.</strong> Datatypes</a></li><li class="chapter-item expanded "><a href="../language/variables.html" class="active"><strong aria-hidden="true">2.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../language/statements.html"><strong aria-hidden="true">2.3.</strong> Statements</a></li><li class="chapter-item expanded "><a href="../language/blocks.html"><strong aria-hidden="true">2.4.</strong> init, next, control</a></li><li class="chapter-item expanded "><a href="../language/procedures.html"><strong aria-hidden="true">2.5.</strong> Procedures</a></li><li class="chapter-item expanded "><a href="../language/modules.html"><strong aria-hidden="true">2.6.</strong> Modules</a></li><li class="chapter-item expanded "><a href="../language/reference.html"><strong aria-hidden="true">2.7.</strong> Language Reference</a></li></ol></li><li class="chapter-item expanded "><a href="../verification/verification.html"><strong aria-hidden="true">3.</strong> Verification</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../verification/specification.html"><strong aria-hidden="true">3.1.</strong> Specification</a></li><li class="chapter-item expanded "><a href="../verification/bmc.html"><strong aria-hidden="true">3.2.</strong> Bounded Model Checking</a></li><li class="chapter-item expanded "><a href="../verification/induction.html"><strong aria-hidden="true">3.3.</strong> Inductive Proofs</a></li><li class="chapter-item expanded "><a href="../verification/refinement.html"><strong aria-hidden="true">3.4.</strong> Verifying Refinement</a></li><li class="chapter-item expanded "><a href="../verification/hyperproperties.html"><strong aria-hidden="true">3.5.</strong> Verifying Hyperproperties</a></li><li class="chapter-item expanded "><a href="../verification/floydhoare.html"><strong aria-hidden="true">3.6.</strong> Floyd-Hoare</a></li><li class="chapter-item expanded "><a href="../verification/smto.html"><strong aria-hidden="true">3.7.</strong> SMTO</a></li></ol></li><li class="chapter-item expanded "><a href="../synthesis/synthesis.html"><strong aria-hidden="true">4.</strong> Synthesis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../synthesis/basics.html"><strong aria-hidden="true">4.1.</strong> Synthesis Basics</a></li><li class="chapter-item expanded "><a href="../synthesis/sygus.html"><strong aria-hidden="true">4.2.</strong> Syntax Guided Synthesis</a></li><li class="chapter-item expanded "><a href="../synthesis/smo.html"><strong aria-hidden="true">4.3.</strong> SyMO</a></li></ol></li><li class="chapter-item expanded "><a href="../advanced/advanced.html"><strong aria-hidden="true">5.</strong> Advanced Features</a></li><li class="chapter-item expanded affix "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../idiomatic.html"><strong aria-hidden="true">6.</strong> Idiomatic UCLID5</a></li><li class="chapter-item expanded "><a href="../tooling.html"><strong aria-hidden="true">7.</strong> Tooling</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">uclid-docs</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="variable-declarations"><a class="header" href="#variable-declarations">Variable Declarations</a></h1>
+<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
+<p>Variables in UCLID5 are instantiated using a <code>var</code> declaration as</p>
+<pre><code class="language-uclid">	var &lt;variable_name&gt; : &lt;type&gt;;
+</code></pre>
+<h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
+<p>Symbolic constants are declared using the <code>const</code> keyword as</p>
+<pre><code class="language-uclid">	const &lt;const_name&gt; : &lt;type&gt;;
+</code></pre>
+<p>Note though that the value for the constant is not defined here.</p>
+<h3 id="uninterpreted-functions"><a class="header" href="#uninterpreted-functions">Uninterpreted functions</a></h3>
+<p>Uninterpreted functions are identified by the keyword <code>function</code>: they have a list of input types and an output type.
+Uninterpreted functions can be declared <code>function</code> declaration. These functions are typed, mapping a tuple of typed arguments to a return type. </p>
+<pre><code class="language-uclid">	function &lt;function_name&gt;(&lt;input_type_list&gt;) : &lt;output_type&gt;;
+</code></pre>
+<p>For example, the following uninterpreted function models the mapping of an instrution to an opcode.</p>
+<pre><code class="language-uclid">	function inst2op(i : word_t) : op_t;
+</code></pre>
+<h3 id="input-and-output-variables"><a class="header" href="#input-and-output-variables">Input and output variables</a></h3>
+<p>Variables can be marked with the keywords <code>input</code> and <code>output</code>, expressing the fact that these variables can be connected to/from by other external modules. Note that the <code>var</code> keyword is not used. For example:</p>
+<pre><code class="language-uclid">input my_input_1 : int
+output my_output_2 : bv8
+</code></pre>
+<p>We describe this in greater detail in the <a href="modules.html">Modules</a> page.</p>
+<h3 id="accessing-values"><a class="header" href="#accessing-values">Accessing values</a></h3>
+<p>The syntax for accessing values from these variables with higher-order types is similar to languages like C/Java. Arrays are <code>0</code> indexed and use the <code>[]</code> operator. Fields from records are accessed with <code>.</code>.</p>
+<pre><code class="language-uclid">	var myarr : [int]bool;
+	sixthval = myarr[5];
+
+	var myrec : record { valid : bool, payload : bv32 };
+	pyld = myrec.payload;
+</code></pre>
+<p>Index <code>i</code> of array <code>arr</code> is accessed using the syntax <code>arr[i]</code>. Field <code>value</code> in the record <code>result</code> is accessed as <code>result.value</code>.</p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>As an example we show an excerpt of an ALU model illustrating <code>input</code> and <code>output</code> declarations as well as internal variable (normal <code>var</code>) declarations. The excerpt is taken from <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex2.1-alu.ucl">here</a>.</p>
+<pre><code class="language-uclid">module main {
+
+  // typedef cmd_t which is an enum
+  type cmd_t = enum { add, sub, mov_imm };
+  // typedef result_t which is a record
+  type result_t = record { valid : boolean, value : bv8 };
+
+  input  valid  : boolean;
+  input  cmd    : cmd_t;
+  // the ALU takes two 3-bit input values from another module
+  input  r1, r2 : bv3;
+  input  immed  : bv8;
+  output result : result_t;
+  var    regs   : [bv3]bv8;
+  var    cnt    : bv8; 
+  
+  // ... remaining module content
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../language/datatypes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../language/statements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../language/datatypes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../language/statements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+// Filename: a_determinism.ucl
+module main {
+    var a: integer;
+
+    // Two instances of A
+    instance pi1: A(a: (a));
+    instance pi2: A(a: (a));
+
+    // Hyperproperty
+    invariant determinism: pi1.x == pi2.x;
+
+    // Step both instances by executing them synchronously and havoc the input a
+    next {
+        havoc a;
+        next(pi1); next(pi2);
+    }
+
+    // Use inductive model checking to prove the hyperproperty over infinite traces
+    control {
+        v = induction;
+        check;
+        print_results;
+    }
+}

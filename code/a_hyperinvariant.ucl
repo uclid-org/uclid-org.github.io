@@ -1,0 +1,21 @@
+// Filename: a_hyperinvariant.ucl
+module A {
+    input a: integer;
+    var x: integer;
+
+    init {
+        x = 0;
+    }
+
+    next {
+        x' = x + a;
+    }
+
+    hyperinvariant[2] determinism: (a.1 == a.2) ==> (x.1 == x.2);
+
+    control {
+        v = bmc(10);
+        check;
+        print_results;
+    }
+}

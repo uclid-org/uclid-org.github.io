@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>A first look at UCLID5 - uclid-docs</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for UCLID5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../introduction/installation.html"><strong aria-hidden="true">1.2.</strong> Installation Guide</a></li><li class="chapter-item expanded "><a href="../introduction/firstlook.html" class="active"><strong aria-hidden="true">1.3.</strong> A first look at UCLID5</a></li></ol></li><li class="chapter-item expanded "><a href="../language/language.html"><strong aria-hidden="true">2.</strong> Language</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../language/datatypes.html"><strong aria-hidden="true">2.1.</strong> Datatypes</a></li><li class="chapter-item expanded "><a href="../language/variables.html"><strong aria-hidden="true">2.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../language/statements.html"><strong aria-hidden="true">2.3.</strong> Statements</a></li><li class="chapter-item expanded "><a href="../language/blocks.html"><strong aria-hidden="true">2.4.</strong> init, next, control</a></li><li class="chapter-item expanded "><a href="../language/procedures.html"><strong aria-hidden="true">2.5.</strong> Procedures</a></li><li class="chapter-item expanded "><a href="../language/modules.html"><strong aria-hidden="true">2.6.</strong> Modules</a></li><li class="chapter-item expanded "><a href="../language/reference.html"><strong aria-hidden="true">2.7.</strong> Language Reference</a></li></ol></li><li class="chapter-item expanded "><a href="../verification/verification.html"><strong aria-hidden="true">3.</strong> Verification</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../verification/specification.html"><strong aria-hidden="true">3.1.</strong> Specification</a></li><li class="chapter-item expanded "><a href="../verification/bmc.html"><strong aria-hidden="true">3.2.</strong> Bounded Model Checking</a></li><li class="chapter-item expanded "><a href="../verification/induction.html"><strong aria-hidden="true">3.3.</strong> Inductive Proofs</a></li><li class="chapter-item expanded "><a href="../verification/refinement.html"><strong aria-hidden="true">3.4.</strong> Verifying Refinement</a></li><li class="chapter-item expanded "><a href="../verification/hyperproperties.html"><strong aria-hidden="true">3.5.</strong> Verifying Hyperproperties</a></li><li class="chapter-item expanded "><a href="../verification/floydhoare.html"><strong aria-hidden="true">3.6.</strong> Floyd-Hoare</a></li><li class="chapter-item expanded "><a href="../verification/smto.html"><strong aria-hidden="true">3.7.</strong> SMTO</a></li></ol></li><li class="chapter-item expanded "><a href="../synthesis/synthesis.html"><strong aria-hidden="true">4.</strong> Synthesis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../synthesis/basics.html"><strong aria-hidden="true">4.1.</strong> Synthesis Basics</a></li><li class="chapter-item expanded "><a href="../synthesis/sygus.html"><strong aria-hidden="true">4.2.</strong> Syntax Guided Synthesis</a></li><li class="chapter-item expanded "><a href="../synthesis/smo.html"><strong aria-hidden="true">4.3.</strong> SyMO</a></li></ol></li><li class="chapter-item expanded "><a href="../advanced/advanced.html"><strong aria-hidden="true">5.</strong> Advanced Features</a></li><li class="chapter-item expanded affix "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../idiomatic.html"><strong aria-hidden="true">6.</strong> Idiomatic UCLID5</a></li><li class="chapter-item expanded "><a href="../tooling.html"><strong aria-hidden="true">7.</strong> Tooling</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">uclid-docs</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="a-first-look-at-uclid5"><a class="header" href="#a-first-look-at-uclid5">A first look at UCLID5</a></h1>
+<p>A simple UCLID5 module that computes the Fibonacci sequence is shown in the <a href="https://github.com/uclid-org/uclid/blob/master/examples/tutorial/ex1.1-fib-model.ucl">example</a> shown below for reference.</p>
+<pre><code class="language-uclid">module main {
+    // Part 1: System description.
+    var a, b : integer;
+    
+    init {
+        a = 0;
+        b = 1;
+    }
+
+    next {
+        a’, b’ = b, a + b;
+    }
+
+    // Part 2: System specification.
+    invariant a_le_b: a &lt;= b;
+
+    // Part 3: Proof script.
+    control {
+        unroll (3);
+        check;
+        print_results;
+    }
+}
+</code></pre>
+<p>We will now walk through each line in this model to understand the basics of UCLID5. The top-level syntactic structure in UCLID5 is a module. All modeling, verification and synthesis code in UCLID5 is contained within modules. In the example, we have defined one module named <code>main</code>.</p>
+<p>The module can be conceptually split into three parts: a system description, a specification and proof script. In the example, these three conceptual parts are also kept separate in the code. The following subsections describe each of these sections.</p>
+<h3 id="the-system-model"><a class="header" href="#the-system-model">The System Model</a></h3>
+<p>This part of a UCLID5 module describes the functionality of the transition system that is being modeled: it tells us what the system does.
+The first item of interest within the module main are state variables.
+These are declared using the var keyword.</p>
+<p>The module main declares two state variables: <code>a</code> and <code>b</code>. These are both of type <code>integer</code>, which corresponds to mathematical integers.
+The <code>init</code> block appears next, defining the initial values of the state variables in the module. After the init block is executed, <code>a</code> and <code>b</code> have the values 0 and 1 respectively.
+The <code>next</code> block appears after this and it defines the transition relation of the module. Primed variables (notation <code>a'</code>) refer to the value of the state variables at the end of the current &quot;step&quot;. The <code>next</code> block assigns <code>a</code> to the (old) value of <code>b</code>, while <code>b</code> is assigned to the (old) value of <code>a + b</code>.</p>
+<h3 id="the-system-specification"><a class="header" href="#the-system-specification">The System Specification</a></h3>
+<p>The specification answers the question: what is the system supposed to do?. In our example, we have a single <em>invariant</em> that comprises that entire specification. It is named <code>a_le_b</code> and as the name suggests, it states that <code>a</code> must be less than or equal to <code>b</code> for every reachable state of the system. Note that the keywords <em>invariant</em> and <em>property</em> are synonyms in UCLID5.</p>
+<h3 id="the-proof-script"><a class="header" href="#the-proof-script">The Proof Script</a></h3>
+<p>The third and final part of the UCLID5 module is a set of commands to the UCLID5 verification engine. These tell how UCLID5 should go about proving that the system satisfies its specification.</p>
+<p>The proof script is contained within the <code>control</code> block. The commands here execute the system for 3 steps and check whether all of the systems properties (in this case, we only have one invariant: <code>a_le_b</code>) are satisfied for each of these steps. The command <code>unroll</code> executes the system for 3 steps. This execution generates four proof obligations. These proof obligations ask whether the system satisfies the invariant <code>a_le_b</code> in the initial state and in each of the 3 states reached next. The <code>check</code> command checks whether these proof obligations are satisfied and the print results prints out the results of these checks.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../introduction/installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../language/language.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../introduction/installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../language/language.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
